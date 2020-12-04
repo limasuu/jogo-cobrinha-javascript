@@ -72,7 +72,13 @@ function iniciarJogo(){
 	if(direcao == "down") 
 		cobrinhaY+= box;
 		
-	cobrinha.pop();
+	if(cobrinhaX != comida.x || cobrinhaY != comida.y){
+		cobrinha.pop();
+		
+	}else{
+		comida.x= Math.floor(Math.random()*15 + 1) * box;
+		comida.y= Math.floor(Math.random()*15 + 1) * box;		
+	}	
 	
 	let novaCabeca= {
 		x: cobrinhaX,
