@@ -6,6 +6,7 @@ cobrinha[0]={
 	x: 8*box,
 	y: 8*box
 }
+let direcao= "right";
 
 function criarBackground(){
 	context.fillStyle= "peachpuff";
@@ -19,5 +20,33 @@ function criarCobrinha(){
 	}
 }
 
-criarBackground();
-criarCobrinha();
+function iniciarJogo(){
+	criarBackground();
+	criarCobrinha();
+	
+	let cobrinhaX= cobrinha[0].x;
+	let cobrinhaY= cobrinha[0].y;
+	
+	if(direcao == "right") 
+		cobrinhaX+= box;
+		
+	if(direcao == "left") 
+		cobrinhaX-= box;
+		
+	if(direcao == "up") 
+		cobrinhaY-= box;
+		
+	if(direcao == "down") 
+		cobrinhaY+= box;
+		
+	cobrinha.pop();
+	
+	let novaCabeca= {
+		x: cobrinhaX,
+		y: cobrinhaY
+	}
+	
+	cobrinha.unshift(novaCabeca);
+}
+
+let jogo= setInterval(iniciarJogo, 100);
