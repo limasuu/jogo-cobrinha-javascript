@@ -1,0 +1,22 @@
+body{
+	height: 95vh;
+	width: 95;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	
+	color: mediumvioletred;
+	background-color: #141414;
+	
+	border-style: dotted;
+	border-color: mediumvioletred;
+	
+	font-family: 'Titillium Web', sans-serif;
+}
+
+canvas{
+	border-style: solid;
+	border-color: black;
+}
